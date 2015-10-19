@@ -193,6 +193,8 @@ namespace WebBrowserF20SC
 
         private void loadPage(String url, int currentTabIndex)
         {
+            if (url.Length == 0) return;
+
             tabControl1.SelectedTab.Text = urltextbox.Text = url;
 
             /**
