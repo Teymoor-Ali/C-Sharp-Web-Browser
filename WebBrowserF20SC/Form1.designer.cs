@@ -54,9 +54,6 @@
             // 
             // urltextbox
             // 
-            this.urltextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.urltextbox.Location = new System.Drawing.Point(197, 37);
             this.urltextbox.Name = "urltextbox";
             this.urltextbox.Size = new System.Drawing.Size(568, 20);
@@ -65,9 +62,7 @@
             // 
             // btnGo
             // 
-            this.btnGo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGo.AutoSize = true;
             this.btnGo.Location = new System.Drawing.Point(771, 31);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(80, 31);
@@ -131,25 +126,21 @@
             // 
             // btnHome
             // 
-            this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHome.AutoSize = true;
             this.btnHome.BackColor = System.Drawing.SystemColors.Control;
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.SystemColors.Menu;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
             this.btnHome.Location = new System.Drawing.Point(154, 25);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(37, 34);
+            this.btnHome.Size = new System.Drawing.Size(40, 40);
             this.btnHome.TabIndex = 4;
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnCloseTab
             // 
-            this.btnCloseTab.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseTab.AutoSize = true;
             this.btnCloseTab.Location = new System.Drawing.Point(857, 31);
             this.btnCloseTab.Name = "btnCloseTab";
             this.btnCloseTab.Size = new System.Drawing.Size(108, 31);
@@ -160,9 +151,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.AutoSize = true;
             this.btnBack.BackColor = System.Drawing.Color.Transparent;
             this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
             this.btnBack.Location = new System.Drawing.Point(12, 27);
@@ -174,9 +163,7 @@
             // 
             // btnForward
             // 
-            this.btnForward.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnForward.AutoSize = true;
             this.btnForward.BackColor = System.Drawing.Color.Transparent;
             this.btnForward.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForward.BackgroundImage")));
             this.btnForward.Location = new System.Drawing.Point(61, 27);
@@ -188,9 +175,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.AutoSize = true;
             this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
             this.btnRefresh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefresh.BackgroundImage")));
             this.btnRefresh.Location = new System.Drawing.Point(110, 27);

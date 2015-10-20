@@ -26,7 +26,7 @@ namespace WebBrowserF20SC
 
         private void init()
         {
-            currentSessionHistory = new List<SessionItem>();
+            currentSessionHistory = new List<SessionItem>();// Saves current history session so back and forward can happen
 
             if (isFirstElement() || currentPageIndex == 0) btnBack.Enabled = false;
             if (isLastElement()) btnForward.Enabled = false;
@@ -428,11 +428,6 @@ namespace WebBrowserF20SC
             this.tabControl1.TabPages.RemoveAt(this.tabControl1.SelectedIndex);
             //the selected index should now be the second last one
             this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 2;
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Backbtn(object sender, EventArgs e)
