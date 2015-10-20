@@ -100,6 +100,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="URLLoader.cs" />
     <EmbeddedResource Include="AddToFavourites.resx">
       <DependentUpon>AddToFavourites.cs</DependentUpon>
     </EmbeddedResource>

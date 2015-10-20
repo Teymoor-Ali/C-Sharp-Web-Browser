@@ -17,7 +17,7 @@ namespace WebBrowserF20SC
     {
 
         private string historyFileName;
-        private List<SessionItem> currentSessionHistory;
+        private List<SessionItem> currentSessionHistory;//1234
         private int currentPageIndex = 0;
 
         public Form1()
@@ -38,8 +38,8 @@ namespace WebBrowserF20SC
             if (isLastElement()) btnForward.Enabled = false;
 
             //load the hisory items and favourites on startup
-            //refreshHistoryItems(); @TODO should lode the stored history file and populate the history tab (?)
-            reloadFavourites(); //@TODO same shit?
+            SavedHistoryItems();
+            reloadFavourites();
         }
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
@@ -114,20 +114,60 @@ namespace WebBrowserF20SC
 
         void refreshHistoryItems()
         {
-            /**
-             * @TODO frijj 
-             * On close -> store le history to the file and reload it on opening ))
-             */
-
             historyToolStripMenuItem.DropDownItems.Clear();
 
-            for (int i = currentPageIndex -1; i >= 0; --i)
+            for (int i = currentPageIndex - 1; i >= 0; --i)
             {
                 SessionItem historyItem = currentSessionHistory.ElementAt(i);
                 DateTime dateTime = historyItem.date;
                 String url = historyItem.url;
 
                 historyToolStripMenuItem.DropDownItems.Add(dateTime + " - " + url);
+            }
+        }
+        void SavedHistoryItems()
+        {
+            historyFileName = "history.txt";
+
+            //clear all items in the history menu item
+            this.historyToolStripMenuItem.DropDownItems.Clear();
+
+            string historyContents = "";
+            try
+            {
+                //read the entire history items from the file in a single string
+                StreamReader rdr = new StreamReader(historyFileName);
+                historyContents = rdr.ReadToEnd();
+                rdr.Close();
+
+                //split each line of the input file from the string
+                string[] splits = historyContents.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (string entry in splits)
+                {
+                    //split the line in two, where the left side of the delimiter is the date and time and the right side is the url
+                    string[] splits2 = entry.Split(new string[] { "!#!" }, StringSplitOptions.RemoveEmptyEntries);
+                    if (splits2.Length == 2)
+                    {
+                        //the first part of the splitted line is the date and time
+                        DateTime dt = DateTime.Parse(splits2[0]);
+
+
+                        //add the date and time in hour and minutes format to the menu item with a '-' and the url
+                        this.historyToolStripMenuItem.DropDownItems.Add(dt.ToString("hh:mm") + " - " + splits2[1]);
+
+                    }
+                    else
+                    {
+                        System.Console.WriteLine("Incorrect format of the history file");
+                    }
+                }
+
+            }
+
+            catch (Exception exp)
+            {
+                //MessageBox.Show(exp.Message);
             }
         }
 
@@ -183,12 +223,18 @@ namespace WebBrowserF20SC
             {
                 url = "http://" + url;
             }
-
             currentSessionHistory.Add(new SessionItem(DateTime.Now, url));
             ++currentPageIndex;
-
             refreshHistoryItems();
-            loadPage(url, currentTabIndex);        
+            loadPage(url, currentTabIndex);
+            //save the current date and time, the delimiter and the url into a string called historyEntry
+            string historyEntry = DateTime.Now.ToString() + "!#!" + url;
+            //open the history file and add the entry inside it
+            StreamWriter rtr = new StreamWriter(historyFileName, true);
+            rtr.WriteLine(historyEntry);
+            rtr.Close();
+            //refresh the history items so it gets updated and the item gets added
+            SavedHistoryItems();
         }
 
         private void loadPage(String url, int currentTabIndex)
@@ -436,43 +482,5 @@ namespace WebBrowserF20SC
         {
             return currentPageIndex == currentSessionHistory.Count;
         }
-    }
-
-    /**
-     * @TODO Should be moved into seperate class -> OOP m8
-     */ 
-    public class URLLoader
-    {
-
-        public string URL;
-        public RichTextBox rtb;
-
-        public void loadURL()
-        {
-            WebClient wc = new WebClient();
-            string htmlRaw = "";
-            try
-            {
-                //get the raw html
-                htmlRaw = wc.DownloadString(this.URL);
-            }
-            catch (Exception exp)
-            {
-                //display any error messages including the status codes
-                htmlRaw = exp.Message;
-            }
-            try
-            {
-                //display the raw html in the rich text box
-                this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = htmlRaw; }));
-            }
-            catch (Exception exp)
-            {
-                //MessageBox.Show(exp.Message);
-            }
-
-        }
-
-
     }
 }
