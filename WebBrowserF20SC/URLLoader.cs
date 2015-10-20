@@ -33,9 +33,9 @@ namespace WebBrowserF20SC
                 //display the raw html in the rich text box
                 this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = htmlRaw; }));
             }
-            catch (Exception exp)
+            catch (Exception)
             {
-                //MessageBox.Show(exp.Message);
+                
             }
         }
     }

@@ -17,7 +17,7 @@ namespace WebBrowserF20SC
     {
 
         private string historyFileName;
-        private List<SessionItem> currentSessionHistory;//1234
+        private List<SessionItem> currentSessionHistory;
         private int currentPageIndex = 0;
 
         public Form1()
@@ -76,17 +76,17 @@ namespace WebBrowserF20SC
                             this.btnGo.PerformClick();
                             rdr.Close();
                         }
-                        catch (Exception exp)
+                        catch (Exception)
                         {
-                            ////MessageBox.Show(exp.Message);
+                           
                         }
                     }
                 }
 
 
-                catch (Exception exp)
+                catch (Exception)
                 {
-                    //MessageBox.Show(exp.Message);
+                    
                 }
             }
 
@@ -165,9 +165,9 @@ namespace WebBrowserF20SC
 
             }
 
-            catch (Exception exp)
+            catch (Exception)
             {
-                //MessageBox.Show(exp.Message);
+                
             }
         }
 
@@ -178,7 +178,7 @@ namespace WebBrowserF20SC
                 //the url text box contains the text of the selected tab 
                 urltextbox.Text = tabControl1.SelectedTab.Text;
             }
-            catch (Exception exp)
+            catch (Exception)
             {
                 //
             }
@@ -242,10 +242,6 @@ namespace WebBrowserF20SC
             if (url.Length == 0) return;
 
             tabControl1.SelectedTab.Text = urltextbox.Text = url;
-
-            /**
-             * some fancy shit
-             */
             btnBack.Enabled = !isFirstElement();
             btnForward.Enabled = !isLastElement();
 
@@ -280,8 +276,6 @@ namespace WebBrowserF20SC
 
         private void editHomePage_Click(object sender, ToolStripItemClickedEventArgs e)
         {
-
-
         }
 
         private void editHomePageToolStripMenuItem_Click(object sender, EventArgs e)
@@ -341,9 +335,9 @@ namespace WebBrowserF20SC
 
 
             }
-            catch (Exception exp)
+            catch (Exception)
             {
-                //MessageBox.Show(exp.Message);
+                
             }
         }
 
@@ -369,9 +363,9 @@ namespace WebBrowserF20SC
                     //load the url once extracted from the text file
                     loadNewTabWithURL(splits[1]);
                 }
-                catch (Exception exp)
+                catch (Exception)
                 {
-                    //MessageBox.Show(exp.Message);
+                   
                 }
             }
             //if the menu item clicked is "Edit"
@@ -412,9 +406,9 @@ namespace WebBrowserF20SC
                     reloadFavourites();
 
                 }
-                catch (Exception exp)
+                catch (Exception)
                 {
-                    ////MessageBox.Show(exp.Message);
+                   
                 }
             }
 
