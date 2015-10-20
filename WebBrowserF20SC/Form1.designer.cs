@@ -43,7 +43,6 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnForward = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -201,14 +200,6 @@
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.Refreshbtn);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(971, 31);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 31);
-            this.progressBar1.TabIndex = 9;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
-            // 
             // tabControl1
             // 
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -262,7 +253,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 641);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnForward);
             this.Controls.Add(this.btnBack);
@@ -300,7 +290,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnForward;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.RichTextBox richTextBox1;
