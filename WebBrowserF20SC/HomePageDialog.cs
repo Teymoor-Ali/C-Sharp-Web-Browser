@@ -27,9 +27,9 @@ namespace WebBrowserF20SC
                 this.homePageUrltextBox.Text = rdr.ReadLine();
                 rdr.Close();
             }
-            catch (Exception exp)
+            catch (Exception)
             {
-                //MessageBox.Show(exp.Message);
+                
             }
         }
 
@@ -48,9 +48,9 @@ namespace WebBrowserF20SC
                     rtr.Close();
                 }
             }
-            catch (Exception exp)
+            catch (Exception)
             {
-                //MessageBox.Show(exp.Message);
+               
             }
 
             this.Close();
