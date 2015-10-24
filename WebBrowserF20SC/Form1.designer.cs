@@ -208,7 +208,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1104, 548);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "     +      ";
+            this.tabPage2.Text = "New Tab";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
@@ -217,21 +217,21 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 6);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1098, 542);
+            this.richTextBox1.Size = new System.Drawing.Size(1098, 539);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.SystemColors.Info;
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1104, 548);
             this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "     +     ";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Text = "Add Tab";
             // 
             // Form1
             // 

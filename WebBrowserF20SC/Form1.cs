@@ -75,9 +75,7 @@ namespace WebBrowserF20SC
                            
                         }
                     }
-                }
-
-
+                }          
                 catch (Exception)
                 {
                     
@@ -86,8 +84,6 @@ namespace WebBrowserF20SC
 
 
         }
-
-
         void loadNewTabWithURL(string URL)
         {
             //create a new tab on the last index and choose the second last index as the current index so the user stays in the current tab
@@ -174,7 +170,7 @@ namespace WebBrowserF20SC
             }
             catch (Exception)
             {
-                //
+                
             }
         }
 
@@ -242,7 +238,7 @@ namespace WebBrowserF20SC
             Console.WriteLine("currPageIndex: " + currentPageIndex);
 
             //create an object of the class URLLoader
-            URLLoader loader = new URLLoader();
+            LoadWebpage loader = new LoadWebpage();
             //save the current url into that class's URL variable
             loader.URL = url;
             //save the rich text box of the current tab to the loader class so the raw html can be displayed
@@ -283,8 +279,6 @@ namespace WebBrowserF20SC
         {
 
         }
-
-
         void reloadFavourites()
         {
             // prevent the user from choosing one of the options available on the associated ToolStripDropDown control
@@ -319,15 +313,8 @@ namespace WebBrowserF20SC
                     ddMenu.DropDownItems.Add("Open");
                     ddMenu.DropDownItems.Add("Edit");
                     ddMenu.DropDownItems.Add("Remove");
-
-
-
                     this.favortiToolStripMenuItem.DropDownItems.Add(ddMenu);
-
                 }
-
-
-
             }
             catch (Exception)
             {

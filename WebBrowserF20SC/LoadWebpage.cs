@@ -5,7 +5,7 @@ using System.IO;
 
 namespace WebBrowserF20SC
 {
-    public class URLLoader
+    public class LoadWebpage
     {
 
         public string URL;
@@ -18,8 +18,7 @@ namespace WebBrowserF20SC
             try
             {
                 response = (HttpWebResponse)request.GetResponse();
-                StreamReader sr = new StreamReader(response.GetResponseStream());
-                //rtb.Text = sr.ReadToEnd();
+                StreamReader sr = new StreamReader(response.GetResponseStream());             
                 this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = sr.ReadToEnd(); }));
                 sr.Close();
             }
@@ -35,7 +34,7 @@ namespace WebBrowserF20SC
                 {
                     this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "Bad Request"; }));
                 }
-                if (((HttpWebResponse)e.Response).StatusCode.ToString() == "403")
+                if (((HttpWebResponse)e.Response).StatusCode.ToString() == "Forbidden")
                 {
                     this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "Forbidden"; }));
                 }
