@@ -28,7 +28,7 @@ namespace WebBrowserF20SC
         {
             //Create a new list for current history to be stoerd
             currentSessionHistory = new List<SessionItem>();
-            //muteing forward and back buttons
+            //muting forward and back buttons
             if (isFirstElement() || currentPageIndex == 0) btnBack.Enabled = false;
             if (isLastElement()) btnForward.Enabled = false;
             //load the hisory items and favourites on startup

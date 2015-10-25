@@ -8,6 +8,7 @@ namespace WebBrowserF20SC
 {
     class SessionItem
     {
+        //Accessors 
         public DateTime date { get; set; }
         public string url { get; set; }
 
