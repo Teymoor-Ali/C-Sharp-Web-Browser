@@ -11,7 +11,7 @@ namespace WebBrowserF20SC
     {
 
         private string historyFileName;
-        private List<SessionItem> currentSessionHistory;
+        private List<T> currentSessionHistory;
         private int currentPageIndex = 0;
 
         public Form1()
@@ -27,7 +27,7 @@ namespace WebBrowserF20SC
         private void init()
         {
             //Create a new list for current history to be stoerd
-            currentSessionHistory = new List<SessionItem>();
+            currentSessionHistory = new List<T>();
             //muting forward and back buttons
             if (isFirstElement() || currentPageIndex == 0) btnBack.Enabled = false;
             if (isLastElement()) btnForward.Enabled = false;
@@ -39,25 +39,25 @@ namespace WebBrowserF20SC
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
             //if the index of the current tab page is the last one then create a new tab
-            if (e.TabPageIndex == this.tabControl1.TabPages.Count - 1)
+            if (e.TabPageIndex == tabControl1.TabPages.Count - 1)
             {
 
                 try
                 {
                     //create a new tab on the last index and select the index  as the second last one so that the user stays in the current tab
-                    this.tabControl1.TabPages.Insert(this.tabControl1.TabPages.Count - 1, "untitled");
-                    this.tabControl1.SelectedIndex = this.tabControl1.TabPages.Count - 2;
+                    tabControl1.TabPages.Insert(tabControl1.TabPages.Count - 1, "untitled");
+                    tabControl1.SelectedIndex = tabControl1.TabPages.Count - 2;
 
                     //fill the new tab with a rich text box
                     RichTextBox rtb = new RichTextBox();
                     rtb.Dock = DockStyle.Fill;
 
-                    this.tabControl1.TabPages[this.tabControl1.TabPages.Count - 2].Controls.Add(rtb);
+                    tabControl1.TabPages[tabControl1.TabPages.Count - 2].Controls.Add(rtb);
                     //add date and time to check the the rich text box is working
                     rtb.Text = DateTime.Now.ToString();
 
 
-                    if (this.tabControl1.TabCount == 3)
+                    if (tabControl1.TabCount == 3)
                     {
                         try
                         {
@@ -104,7 +104,7 @@ namespace WebBrowserF20SC
 
             for (int i = currentPageIndex - 1; i >= 0; --i)
             {
-                SessionItem historyItem = currentSessionHistory.ElementAt(i);
+                T historyItem = currentSessionHistory.ElementAt(i);
                 DateTime dateTime = historyItem.date;
                 String url = historyItem.url;
 
@@ -209,7 +209,7 @@ namespace WebBrowserF20SC
             {
                 url = "http://" + url;
             }
-            currentSessionHistory.Add(new SessionItem(DateTime.Now, url));
+            currentSessionHistory.Add(new T(DateTime.Now, url));
             ++currentPageIndex;
             refreshHistoryItems();
             loadPage(url, currentTabIndex);
@@ -250,7 +250,7 @@ namespace WebBrowserF20SC
         {
             try
             {
-                //
+                //The hompage is read from the file and loaded
                 StreamReader rdr = new StreamReader("homepage.txt");
                 loadNewTabWithURL(rdr.ReadLine().Trim());
             }
@@ -375,11 +375,8 @@ namespace WebBrowserF20SC
                             rtr.WriteLine(splits[i]);
                         }
                     }
-
                     rtr.Close();
-
                     reloadFavourites();
-
                 }
                 catch (Exception)
                 {

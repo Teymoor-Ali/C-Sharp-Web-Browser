@@ -48,7 +48,6 @@ namespace WebBrowserF20SC
 
             this.myName = name;
         }
-        //
         private void AddToFavourites_Load(object sender, EventArgs e)
         {
             if (this.myIndex > -1)
@@ -104,11 +103,8 @@ namespace WebBrowserF20SC
                 }
 
                 rtr.Close();
-
-                this.Close();
-
+                Close();
                 return;
-
             }
             try
             {

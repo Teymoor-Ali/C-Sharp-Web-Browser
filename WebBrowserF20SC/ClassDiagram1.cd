@@ -6,7 +6,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>RwSACAAAQDARAAQRgACEAwAqJACAAINCCMQ4CCApDAA=</HashCode>
+      <HashCode>RwSACAAAQDARAAQRgACECwAqJACIAINCCMQ4CCApDAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,7 +17,7 @@
       <FileName>AddToFavourites.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebBrowserF20SC.SessionItem">
+  <Class Name="WebBrowserF20SC.T">
     <Position X="7" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAA=</HashCode>

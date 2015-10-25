@@ -13,6 +13,7 @@ namespace WebBrowserF20SC
 
         public void loadURL()
         {
+            //Create a WebRequest instance by calling Create with the URI
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
             HttpWebResponse response = null;
             try
