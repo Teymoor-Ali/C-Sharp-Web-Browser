@@ -444,5 +444,13 @@ namespace WebBrowserF20SC
         {
             return currentPageIndex == currentSessionHistory.Count;
         }
+
+        private void ClearHistorybtn_Click(object sender, EventArgs e)
+        {
+            // Clears the history file and refreshes the history
+            File.WriteAllText("history.txt", "");
+            MessageBox.Show("History Cleared");
+            SavedHistoryItems();
+        }
     }
 }
