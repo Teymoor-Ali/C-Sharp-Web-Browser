@@ -9,7 +9,7 @@ namespace WebBrowserF20SC
     class SessionItem
     {
         public DateTime date { get; set; }
-        public String url { get; set; }
+        public string url { get; set; }
 
         public SessionItem() {  }
 

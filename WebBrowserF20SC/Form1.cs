@@ -26,11 +26,11 @@ namespace WebBrowserF20SC
 
         private void init()
         {
-            currentSessionHistory = new List<SessionItem>();// Saves current history session so back and forward can happen
-
+            //Create a new list for current history to be stoerd
+            currentSessionHistory = new List<SessionItem>();
+            //muteing forward and back buttons
             if (isFirstElement() || currentPageIndex == 0) btnBack.Enabled = false;
             if (isLastElement()) btnForward.Enabled = false;
-
             //load the hisory items and favourites on startup
             SavedHistoryItems();
             reloadFavourites();
@@ -61,9 +61,7 @@ namespace WebBrowserF20SC
                     {
                         try
                         {
-
                             StreamReader rdr = new StreamReader("homepage.txt");
-
                             //put the text as the line the homepage text file reads
                             this.urltextbox.Text = rdr.ReadLine();
                             //call the event handler for the Go button
@@ -81,8 +79,6 @@ namespace WebBrowserF20SC
                     
                 }
             }
-
-
         }
         void loadNewTabWithURL(string URL)
         {
@@ -286,8 +282,6 @@ namespace WebBrowserF20SC
             //clear all current data from the drop down list
             this.favortiToolStripMenuItem.DropDownItems.Clear();
 
-
-
             try
             {
                 //read from the favourites.text file
@@ -419,20 +413,18 @@ namespace WebBrowserF20SC
 
         private void Backbtn(object sender, EventArgs e)
         {
+            //Back button moves the index
             if (isFirstElement()) return;
-
             currentPageIndex -= 1;
-
             String url = currentSessionHistory.ElementAt(currentPageIndex - 1).url;
             loadPage(url, tabControl1.SelectedIndex);
         }
 
         private void Forwardbtn(object sender, EventArgs e)
         {
+            //Forward button moves the index
             if (isLastElement()) return;
-
             currentPageIndex += 1;
-
             String url = currentSessionHistory.ElementAt(currentPageIndex - 1).url;
             loadPage(url, tabControl1.SelectedIndex);
         }

@@ -18,8 +18,8 @@ namespace WebBrowserF20SC
             try
             {
                 response = (HttpWebResponse)request.GetResponse();
-                StreamReader sr = new StreamReader(response.GetResponseStream());             
-                this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = sr.ReadToEnd(); }));
+                StreamReader sr = new StreamReader(response.GetResponseStream());
+                rtb.Invoke(new MethodInvoker(delegate { rtb.Text = sr.ReadToEnd(); }));
                 sr.Close();
             }
             catch (WebException e)
@@ -28,15 +28,15 @@ namespace WebBrowserF20SC
 
                 if (((HttpWebResponse)e.Response).StatusCode.ToString() == "NotFound")
                 {
-                    this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "page not found"; }));
+                    rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "page not found"; }));
                 }
                 if (((HttpWebResponse)e.Response).StatusCode.ToString() == "BadRequest")
                 {
-                    this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "Bad Request"; }));
+                    rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "Bad Request"; }));
                 }
                 if (((HttpWebResponse)e.Response).StatusCode.ToString() == "Forbidden")
                 {
-                    this.rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "Forbidden"; }));
+                    rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "Forbidden"; }));
                 }
             }
 

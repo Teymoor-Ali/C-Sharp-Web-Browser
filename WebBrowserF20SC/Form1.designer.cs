@@ -217,9 +217,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 6);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1098, 539);
+            this.richTextBox1.Size = new System.Drawing.Size(1098, 542);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
