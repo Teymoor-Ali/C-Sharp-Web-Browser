@@ -1,49 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="WebBrowserF20SC.Form1">
-    <Position X="3.25" Y="0.75" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
+  <Class Name="WebBrowserF20SC.GUI">
+    <Position X="5.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>RwSACAAAQDARAAQRgACECwAqJACIAINCCMQ4CCApDAA=</HashCode>
+      <HashCode>RwSACAAAQDARAAQRgACEC0AqJQCIAINCKMQ4CCAtDAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LoadWebpage" />
+      <Property Name="AddToFavourites" />
+      <Property Name="HomePageDialog" />
+      <Property Name="T" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="WebBrowserF20SC.AddToFavourites">
-    <Position X="5.25" Y="0.75" Width="1.5" />
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAQiQAAAAAAACAAAACACAAQAAEBEACAEAECEQ=</HashCode>
       <FileName>AddToFavourites.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebBrowserF20SC.T">
-    <Position X="7" Y="0.75" Width="1.5" />
+  <Class Name="WebBrowserF20SC.SessionHistory">
+    <Position X="9.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAA=</HashCode>
       <FileName>HistoryItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebBrowserF20SC.HomePageDialog">
-    <Position X="8.75" Y="0.75" Width="1.5" />
+    <Position X="3.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAACAACAAAAQAAACAQAACAAAAAAAAAFAAAAAAgAA=</HashCode>
       <FileName>HomePageDialog.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebBrowserF20SC.LoadWebpage">
-    <Position X="10.5" Y="0.75" Width="1.5" />
+    <Position X="9.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>LoadWebpage.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WebBrowserF20SC.Program">
-    <Position X="1.5" Y="0.75" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="GUI" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

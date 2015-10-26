@@ -8,6 +8,19 @@ namespace WebBrowserF20SC
 {
     static class Program
     {
+
+        public static GUI GUI
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +29,7 @@ namespace WebBrowserF20SC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new GUI());
         }
     }
 }

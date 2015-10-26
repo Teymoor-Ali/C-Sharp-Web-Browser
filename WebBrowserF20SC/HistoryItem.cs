@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace WebBrowserF20SC
 {
-    class T
+    class SessionHistory
     {
         //Accessors 
         public DateTime date { get; set; }
         public string url { get; set; }
 
-        public T() {  }
+        public SessionHistory() {  }
 
-        public T(DateTime date, String url)
+        public SessionHistory(DateTime date, String url)
         {
             this.date = date;
             this.url = url;

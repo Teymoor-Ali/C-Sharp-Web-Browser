@@ -7,16 +7,64 @@ using System.IO;
 
 namespace WebBrowserF20SC
 {
-    public partial class Form1 : Form
+    public partial class GUI : Form
     {
 
         private string historyFileName;
-        private List<T> currentSessionHistory;
+        private List<SessionHistory> currentSessionHistory;
         private int currentPageIndex = 0;
 
-        public Form1()
+        public GUI()
         {
             InitializeComponent();
+        }
+
+        public LoadWebpage LoadWebpage
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public AddToFavourites AddToFavourites
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public HomePageDialog HomePageDialog
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        internal SessionHistory T
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,13 +75,24 @@ namespace WebBrowserF20SC
         private void init()
         {
             //Create a new list for current history to be stoerd
-            currentSessionHistory = new List<T>();
+            currentSessionHistory = new List<SessionHistory>();
             //muting forward and back buttons
             if (isFirstElement() || currentPageIndex == 0) btnBack.Enabled = false;
             if (isLastElement()) btnForward.Enabled = false;
             //load the hisory items and favourites on startup
             SavedHistoryItems();
             reloadFavourites();
+            try
+            {
+                StreamReader rdr = new StreamReader("homepage.txt");
+                string temp = rdr.ReadLine();
+                if (temp != "")
+                    loadNewTabWithURL(temp);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
@@ -104,7 +163,7 @@ namespace WebBrowserF20SC
 
             for (int i = currentPageIndex - 1; i >= 0; --i)
             {
-                T historyItem = currentSessionHistory.ElementAt(i);
+                SessionHistory historyItem = currentSessionHistory.ElementAt(i);
                 DateTime dateTime = historyItem.date;
                 String url = historyItem.url;
 
@@ -209,7 +268,7 @@ namespace WebBrowserF20SC
             {
                 url = "http://" + url;
             }
-            currentSessionHistory.Add(new T(DateTime.Now, url));
+            currentSessionHistory.Add(new SessionHistory(DateTime.Now, url));
             ++currentPageIndex;
             refreshHistoryItems();
             loadPage(url, currentTabIndex);
