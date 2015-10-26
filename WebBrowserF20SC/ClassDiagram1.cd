@@ -2,15 +2,16 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="WebBrowserF20SC.GUI">
     <Position X="5.5" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>RwSACAAAQDARAAQRgACEC0AqJQCIAINCKMQ4CCAtDAA=</HashCode>
+      <HashCode>RwSACEAAQDARAAQRgACECwAqJQCIAINCCMQ4CCApDAA=</HashCode>
       <FileName>Form1.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="LoadWebpage" />
-      <Property Name="AddToFavourites" />
-      <Property Name="HomePageDialog" />
-      <Property Name="T" />
+      <Property Name="SessionHistory" />
     </ShowAsAssociation>
   </Class>
   <Class Name="WebBrowserF20SC.AddToFavourites">
@@ -24,7 +25,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WebBrowserF20SC.SessionHistory">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+    <Position X="3" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAA=</HashCode>
       <FileName>HistoryItem.cs</FileName>
@@ -38,7 +39,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="WebBrowserF20SC.LoadWebpage">
-    <Position X="9.5" Y="2.5" Width="1.5" />
+    <Position X="7.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>LoadWebpage.cs</FileName>
@@ -47,11 +48,13 @@
   <Class Name="WebBrowserF20SC.Program">
     <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAABAAAAAAAIAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="GUI" />
+      <Property Name="AddToFavourites" />
+      <Property Name="HomePageDialog" />
     </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />

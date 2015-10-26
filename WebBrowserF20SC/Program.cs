@@ -21,6 +21,30 @@ namespace WebBrowserF20SC
             }
         }
 
+        public static AddToFavourites AddToFavourites
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public static HomePageDialog HomePageDialog
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

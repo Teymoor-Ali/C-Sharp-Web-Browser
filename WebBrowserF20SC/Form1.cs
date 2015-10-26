@@ -31,31 +31,7 @@ namespace WebBrowserF20SC
             }
         }
 
-        public AddToFavourites AddToFavourites
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public HomePageDialog HomePageDialog
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        internal SessionHistory T
+        internal SessionHistory SessionHistory
         {
             get
             {
@@ -112,9 +88,6 @@ namespace WebBrowserF20SC
                     rtb.Dock = DockStyle.Fill;
 
                     tabControl1.TabPages[tabControl1.TabPages.Count - 2].Controls.Add(rtb);
-                    //add date and time to check the the rich text box is working
-                    rtb.Text = DateTime.Now.ToString();
-
 
                     if (tabControl1.TabCount == 3)
                     {

@@ -15,7 +15,7 @@ namespace WebBrowserF20SC
         {
             //Create a WebRequest instance by calling Create with the URI
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
-            HttpWebResponse response = null;
+            HttpWebResponse response = null;         
             try
             {
                 response = (HttpWebResponse)request.GetResponse();
@@ -26,22 +26,9 @@ namespace WebBrowserF20SC
             }
             catch (WebException e)
             {
-                Console.WriteLine(((HttpWebResponse)e.Response).StatusCode.ToString());
-                //Exceptions for individual error codes returned from server
-                if (((HttpWebResponse)e.Response).StatusCode.ToString() == "NotFound")
-                {
-                    rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "page not found"; }));
-                }
-                if (((HttpWebResponse)e.Response).StatusCode.ToString() == "BadRequest")
-                {
-                    rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "Bad Request"; }));
-                }
-                if (((HttpWebResponse)e.Response).StatusCode.ToString() == "Forbidden")
-                {
-                    rtb.Invoke(new MethodInvoker(delegate { rtb.Text = "Forbidden"; }));
-                }
+                rtb.Invoke(new MethodInvoker(delegate { rtb.Text = ((HttpWebResponse)e.Response).StatusCode.ToString();}));
             }
-
+        }
+    
         }
     }
-}
