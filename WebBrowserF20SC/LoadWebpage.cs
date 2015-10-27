@@ -15,7 +15,7 @@ namespace WebBrowserF20SC
         {
             //Create a WebRequest instance by calling Create with the URI
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
-            HttpWebResponse response = null;         
+            HttpWebResponse response = null;
             try
             {
                 response = (HttpWebResponse)request.GetResponse();
@@ -26,7 +26,7 @@ namespace WebBrowserF20SC
             }
             catch (WebException e)
             {
-                rtb.Invoke(new MethodInvoker(delegate { rtb.Text = ((HttpWebResponse)e.Response).StatusCode.ToString();}));
+                rtb.Invoke(new MethodInvoker(delegate { rtb.Text = ((HttpWebResponse)e.Response).StatusCode.ToString(); }));               
             }
         }
     
